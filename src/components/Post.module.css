@@ -1,0 +1,9 @@
+.name_field {
+  width: auto;
+  background-color: green;
+  color: white;
+}
+
+.message_field {
+  margin: 0 20px;
+}
