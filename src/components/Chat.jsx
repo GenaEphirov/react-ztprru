@@ -2,7 +2,7 @@ import React from 'react'
 import s from './Content.module.css'
 import Post from './Post'
 
-const Content = () => {
+const Chat = () => {
   return (
     <div className={s.container}>
       <Post name='Andrey' message='Hello, Bill!' date='26.07.2022'/>
@@ -11,4 +11,4 @@ const Content = () => {
   )
 }
 
-export default Content
+export default Chat

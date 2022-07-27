@@ -2,4 +2,15 @@
   height: 50px;
   width: auto;
   background-color: orange;
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  border: 3px solid black;
+  color: black;
+  text-decoration: none;
+  margin: 5px;
+  padding: 3px;
+  font-size: 20px;
 }
