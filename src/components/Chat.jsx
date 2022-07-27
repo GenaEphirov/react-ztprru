@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './Content.module.css'
+import s from './Chat.module.css'
 import Post from './Post'
 
 const Chat = () => {
