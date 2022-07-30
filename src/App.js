@@ -3,11 +3,11 @@ import "./style.css";
 import Header from './components/Header'
 import Chat from './components/Chat'
 
-export default function App() {
+export default function App(props) {
   return (
     <div>
       <Header />
-      <Chat />
+      <Chat chatdata={props.chatdata}/>
    </div>
   );
 }
