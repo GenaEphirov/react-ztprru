@@ -7,7 +7,7 @@ export default function App(props) {
   return (
     <div>
       <Header />
-      <Chat chatdata={props.chatdata}/>
-   </div>
+      <Chat chatdata={props.chatdata} addPost={props.addPost}/>
+    </div>
   );
 }
