@@ -1,10 +1,13 @@
+import {rerenderEntireTree} from './render.js'
+
 export const state = {
   chatdata: [
     {userID: 1, messageID: 1, name: 'Andrey', message: 'Hello, Bill!', date: '26.07.2022'},
     {userID: 2, messageID: 2, name: 'Bill', message: 'How is it going?', date: '27.07.2022'},
   ],
+  text: {chatMessage: '', friendsMessages: {1: '', 2: 'hi!'}}
 }
-export const addPost = (message) => {
+export const addPost = (elem) => {
   let userID = 1
   let messageID = state.chatdata.slice(-1)[0].messageID + 1
   let name = 'Andrey'
@@ -24,7 +27,13 @@ export const addPost = (message) => {
     userID: userID,
     messageID: messageID,
     name: name,
-    message: message,
+    message: elem.current.value,
     date: date,
   })
+  rerenderEntireTree()
+}
+
+export const trackTextArea = (elem) => {
+  state.text.chatMessage = elem.current.value
+  rerenderEntireTree()
 }
