@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  margin: 0 300px;
+  box-shadow: 5px 0 5px black, -5px 0 5px black;
+}
+
+.navbar {
+  background-color: orange;
+  height: fit-content;
+}
+
+.navbar_item {
+  padding: 10px;
+}
+
+.active_navbar_item {
+  padding: 10px;
+  background-color: rgb(240, 240, 240);
+  box-shadow: 0 -3px 3px gold, 0 3px 3px gold;
+}
+
+.chat {
+  width: 100vw;
+}

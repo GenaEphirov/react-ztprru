@@ -6,7 +6,18 @@ export const store = {
       {userID: 1, messageID: 1, name: 'Andrey', message: 'Hello, Bill!', date: '26.07.2022'},
       {userID: 2, messageID: 2, name: 'Bill', message: 'How is it going?', date: '27.07.2022'},
     ],
-    text: {chatMessage: '', friendsMessages: {1: '', 2: 'hi!'}}
+    privatechatdata: [
+      {userID: 2, messages: [
+        {messageID: 1, sent: true, message: 'Hello, Bill! I wrote you in private chat for testing', date: '26.07.2022'},
+        {messageID: 2, sent: false, message: 'Hello, Andrey! I successfully received your message', date: '26.07.2022'},
+        {messageID: 3, sent: true, message: `That's good!`, date: '26.07.2022'},
+        {messageID: 4, sent: false, message: 'Yeap! :)', date: '26.07.2022'},
+      ]}
+    ],
+    text: {chatMessage: '', friendsMessages: {1: '', 2: 'hi!'}},
+    friends: [
+      {userID: 2, name: 'Bill'},
+    ]
   },
   addPost(elem) {
     if (elem.current.value === '') return;
