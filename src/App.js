@@ -7,12 +7,10 @@ export default function App(props) {
   return (
     <div>
       <Header />
-      <Chat state={
-        {
+      <Chat state={{
           chatdata: props.state.chatdata, 
-          text: {chatMessage: props.state.text.chatMessage}
-        }
-        } addPost={props.addPost}/>
+          text: {chatMessage: props.state.text.chatMessage}}
+        } dispatch={props.dispatch} />
     </div>
   );
 }
