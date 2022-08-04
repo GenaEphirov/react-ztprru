@@ -9,7 +9,7 @@ const root = createRoot(rootElement);
 export const rerenderEntireTree = () => {
   root.render(
     <StrictMode>
-      <App state={store.state} dispatch={store.dispatch} creators={store.creators} />
+      <App state={store.state} dispatch={store.dispatch.bind(store)} creators={store.creators} />
     </StrictMode>
   );
 }

@@ -40,9 +40,9 @@ export const store = {
   },
   dispatch(action) {
     if (action.type === 'ADD-POST') {
-      store.addPost(action.textAreaElement)
+      this.addPost(action.textAreaElement)
     } else if (action.type === 'TRACK-TEXT-AREA') {
-      store.trackTextArea(action.textAreaElement)
+      this.trackTextArea(action.textAreaElement)
     }
   },
   creators: {
