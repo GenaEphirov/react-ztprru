@@ -9,8 +9,9 @@ export const store = {
     text: {chatMessage: '', friendsMessages: {1: '', 2: 'hi!'}}
   },
   addPost(elem) {
+    if (elem.current.value === '') return;
     let userID = 1
-    let messageID = state.chatdata.slice(-1)[0].messageID + 1
+    let messageID = this.state.chatdata.slice(-1)[0].messageID + 1
     let name = 'Andrey'
     let getCurrentTime = () => {
       let now = new Date()
@@ -24,7 +25,7 @@ export const store = {
     }
   
     let date = getCurrentTime()
-    state.chatdata.push({
+    this.state.chatdata.push({
       userID: userID,
       messageID: messageID,
       name: name,
@@ -33,8 +34,8 @@ export const store = {
     })
     rerenderEntireTree()
   },
-  trackTextArea = (elem) => {
-    state.text.chatMessage = elem.current.value
+  trackTextArea(elem) {
+    this.state.text.chatMessage = elem.current.value
     rerenderEntireTree()
   },
   dispatch(action) {
@@ -43,5 +44,19 @@ export const store = {
     } else if (action.type === 'TRACK-TEXT-AREA') {
       store.trackTextArea(action.textAreaElement)
     }
-  }
+  },
+  creators: {
+    addPostCreator(textAreaElement) {
+      return {
+        type: 'ADD-POST',
+        textAreaElement: textAreaElement,
+      }
+    },
+    trackTextAreaCreator(textAreaElement) {
+      return {
+        type: 'TRACK-TEXT-AREA',
+        textAreaElement: textAreaElement,
+      }
+    },
+  },
 }

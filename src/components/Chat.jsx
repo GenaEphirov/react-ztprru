@@ -9,12 +9,12 @@ const Chat = (props) => {
   let textAreaElement = React.createRef()
   return (
     <div className={s.container}>
-      <textarea className={s.field} ref={textAreaElement} onChange={() => props.dispatch({type: 'TRACK-TEXT-AREA', textAreaElement: textAreaElement})} value={props.state.text.chatMessage} id="message" cols="30" rows="10" />
+      <textarea className={s.field} ref={textAreaElement} onChange={() => props.dispatch(props.creators.trackTextAreaCreator(textAreaElement))} value={props.state.text.chatMessage} id="message" cols="30" rows="10" />
       <br/>
       <button class={s.btn} onClick={() => {
-        props.dispatch({type: 'ADD-POST', textAreaElement: textAreaElement})
+        props.dispatch(props.creators.addPostCreator(textAreaElement))
         textAreaElement.current.value = ''
-        props.dispatch({type: 'TRACK-TEXT-AREA', textAreaElement: textAreaElement})
+        props.dispatch(props.creators.trackTextAreaCreator(textAreaElement))
         }}>Отправить сообщение</button>
       {Posts}
     </div>
