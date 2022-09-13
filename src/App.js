@@ -3,6 +3,8 @@ import "./style.css";
 import Header from './components/Header'
 import Chat from './components/Chat'
 import Dialogs from './components/Dialogs'
+import ExperimentalComponent from './components/ExperimentalComponent'
+
 
 export default function App(props) {
   return (
@@ -17,6 +19,9 @@ export default function App(props) {
           chatdata: props.state.chatdata, 
           text: {chatMessage: props.state.text.chatMessage},
         }} dispatch={props.dispatch} creators={props.creators} />
+      <ExperimentalComponent name={'Andrey'}>
+        <p>something happen every time</p>
+      </ExperimentalComponent>
       {/* TODO FOOTER */}
     </div>
   );

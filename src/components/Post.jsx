@@ -2,6 +2,7 @@ import React from 'react'
 import s from './Post.module.css'
 
 const Post = (props) => {
+  let params = {className: s.name_field}
   if (!props.sent) {
     return (
       <div className={s.post}>

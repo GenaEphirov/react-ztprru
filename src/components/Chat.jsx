@@ -7,6 +7,7 @@ const Chat = (props) => {
     return <Post name={elem.name} message={elem.message} date={elem.date} />
   })
   let textAreaElement = React.createRef()
+  let params = {className: s.field}
   return (
     <div className={s.container}>
       <textarea className={s.field} ref={textAreaElement} onChange={() => props.dispatch(props.creators.trackTextAreaCreator(textAreaElement))} value={props.state.text.chatMessage} id="message" cols="30" rows="10" />
