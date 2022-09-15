@@ -19,7 +19,7 @@ export default function App(props) {
           chatdata: props.state.chatdata, 
           text: {chatMessage: props.state.text.chatMessage},
         }} dispatch={props.dispatch} creators={props.creators} />
-      <ExperimentalComponent name={'Andrey'}></ExperimentalComponent>
+      <ExperimentalComponent staticParam experimental={true} className="btn" name={'Andrey'} />
       {/* TODO FOOTER */}
     </div>
   );

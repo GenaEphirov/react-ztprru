@@ -1,11 +1,9 @@
 import React from 'react'
 
 const ExperimentalComponent = props => {
-  console.log(props)
+  console.log(props);
   return (
-    <div>
-      {props.children}
-    </div>
+    <button>Dont click me!</button>
   )
 }
 
